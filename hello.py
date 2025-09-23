@@ -14,8 +14,15 @@ print("Summan av talen är:" + " " + str(sum)) #Måste här göra om int till en
 '''
 
 username = input("Hej, vad heter du?: ")
-age = input("Hur gammal är du?: ")
 
+while True:
+    age = input("\nHur gammal är du?: ")
+    try:
+         age = int(age)
+         break
+    except ValueError:
+        print("Du måste ange en siffra!")
+    
 if int(age) < 18:
     print("\nDu är minderårig!")
 
@@ -23,4 +30,4 @@ elif int(age) >= 18:
     print ("\nDu är myndig!\n")
 
 for x in range (5):
-    print("Hej" + " " + username + "!" + " Som är " + age + " " + "år gammal!")
+    print("Hej" + " " + username + "!" + " Som är " + str(age) + " " + "år gammal!")
