@@ -22,13 +22,5 @@ if int(age) < 18:
 elif int(age) >= 18:
     print ("Du är myndig!")
 
-'''
-elif int(age) != int:
-    print ("Du måste ange en siffra!")
-
-else:
-    print("Något blev fel!")
-'''
-
 for x in range (5):
-    print("Hej" + " " + username + "!")
+    print("\n Hej" + " " + username + "!")
