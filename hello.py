@@ -15,12 +15,12 @@ print("Summan av talen är:" + " " + str(sum)) #Måste här göra om int till en
 
 username = input("Hej, vad heter du?: ")
 
-while True:
+while True: # While loop för att fortsätta fråga efter input tills rätt format är angivet
     age = input("\nHur gammal är du?: ")
     try:
-         age = int(age)
+         age = int(age) # Omvandlar input till en int
          break
-    except ValueError:
+    except ValueError: # Använder except för att fånga ValueError om input inte är en siffra
         print("Du måste ange en siffra!")
     
 if int(age) < 18:
