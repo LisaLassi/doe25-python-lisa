@@ -82,8 +82,11 @@ print(*fruits, sep = ', ')
 print(f"Dina favoritfrukter är: {fruits[0], fruits[1]} och {fruits[2]} !")
 '''
 # b) Lägg till en frukt i listan med append()
+fruits.append("dragonfruit")
+print(*fruits, sep = ', ')
 
 # c) Skriv ut endast den första och sista frukten i listan.
+print(f"Den första frukten i listan är: {fruits[0]} och den sista frukten är: {fruits[-1]}") # -1 för att komma åt sista elementet i listan (-1 är alltid sista elementet i en lista)
 
 # 6. Dictionaries
 
