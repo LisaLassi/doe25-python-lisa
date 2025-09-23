@@ -20,7 +20,7 @@ if int(age) < 18:
     print("\nDu är minderårig!")
 
 elif int(age) >= 18:
-    print ("\nDu är myndig!")
+    print ("\nDu är myndig!\n")
 
 for x in range (5):
-    print("Hej" + " " + username + "!")
+    print("Hej" + " " + username + "!" + " Som är " + age + " " + "år gammal!")
