@@ -17,10 +17,10 @@ username = input("Hej, vad heter du?: ")
 age = input("Hur gammal är du?: ")
 
 if int(age) < 18:
-    print("Du är minderårig!")
+    print("\nDu är minderårig!")
 
 elif int(age) >= 18:
-    print ("Du är myndig!")
+    print ("\nDu är myndig!")
 
 for x in range (5):
-    print("\n Hej" + " " + username + "!")
+    print("Hej" + " " + username + "!")
