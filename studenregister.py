@@ -1,20 +1,19 @@
 menu_is_running = True
 
-while menu_is_running:
-    menu_choice = input('Gör ett menyval \n[1] LÄGG TILL STUDENT \n[2] LISTA ALLA STUDENTER \n[3] AVSLUTA \n Ditt val:')
+studenregister = []
 
-    studenregister ={
-        'Förnamn' : {name},
-        'Efternamn' : {lastname},
-        'Ålder' : {age}
-        }
+while menu_is_running:
+    student = {'Förnamn': '', 'Efternamn': '', 'Ålder': ''}
+    menu_choice = input('Gör ett menyval \n[1] LÄGG TILL STUDENT \n[2] LISTA ALLA STUDENTER \n[3] AVSLUTA \n Ditt val:')
 
     if menu_choice == '1':
         print('Du valde att lägga till en student, ange förnamn & efternamn: ')
-        name = input('Förnamn: ')
-        lastname = input('Efternamn: ')
-        age = input('Ålder: ')
-
+        student['Förnamn'] = input('Ange förnamn: ')
+        student['Efternamn'] = input('Ange efternamn: ')
+        student['Ålder'] = input('Ange ålder: ')
+        
+        studenregister.append(student)
+    
         print('Studenten är tillagd! \n')
         
     elif menu_choice == '2':
