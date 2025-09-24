@@ -75,19 +75,73 @@ elif int(age) >= 18:
 
 # 5. Listor
 # a) Skapa en lista med 3 favoritfrukter
+'''
 fruits = ["melon", "mango", "banan"]
 print(*fruits, sep = ', ')
-
+'''
 ''' #ska skriva ut användarens inmatade frukter
 print(f"Dina favoritfrukter är: {fruits[0], fruits[1]} och {fruits[2]} !")
 '''
 # b) Lägg till en frukt i listan med append()
+'''
 fruits.append("dragonfruit")
 print(*fruits, sep = ', ')
-
-# c) Skriv ut endast den första och sista frukten i listan.
+'''
+# c) Skriv ut hela listan med en for-loop
+'''
+for frukt in fruits:
+    print(frukt)
+'''
+# d) Skriv ut endast den första och sista frukten i listan.
+'''
 print(f"Den första frukten i listan är: {fruits[0]} och den sista frukten är: {fruits[-1]}") # -1 för att komma åt sista elementet i listan (-1 är alltid sista elementet i en lista)
-
+'''
 # 6. Dictionaries
+# a) Skapa en dictionary för en anvädare med nycklarna 'namn', 'ålder', 'stad'.
+'''
+my_dict ={
+    'namn': 'Lisa',
+    'ålder': 27,
+    'stad': 'Stockholm'
+}
+'''
+# b) Skriv ut värdena med print()
+#print(f'Namn: {my_dict['namn']}, Ålder: {my_dict['ålder']}, Stad: {my_dict['stad']}')
 
+# c) Lägg till en ny nyckel 'favoritfärg'.
+'''
+my_dict['favoritfärg'] = 'lila'
+
+print(my_dict)
+'''      
+# d) Loopa igenom dictionaryn och skriv ut alla nycklar och värden.
+'''
+for värde in my_dict:
+    print(värde, ":", my_dict[värde])
+'''
 # 7. Mini-projekt: Kombinera
+'''
+Bygg ett litet program som:
+1. Frågar användaren efter namn, ålder och favoritfärg.
+2. Sparar informationen i en dictionary.
+3. Lägger till användarens favoritfrukter i en lista.
+4. Skriver ut en personlig hälsning och sammanfattning av informationen.
+5. Om användaren är under 18, skriv en extra rad: "Du är minderårig!".'''
+name = input("Vad är ditt namn: ")
+age = input("Hur gammal är du: ")
+fav_color = input ("Vilken är din favoritfärg: ")
+
+my_dict ={
+    'Namn' : {name},
+    'Ålder': {age},
+    'Favorit-färg' : {fav_color}
+}
+my_list = ['', '']
+fav_fruit1 = input("Vilken är din första favoritfrukt: ")
+my_list[0] = fav_fruit1
+fav_fruit2 = input("Vilken är din andra favoritfrukt: ")
+my_list[1] = fav_fruit2
+
+print(f"Hej {name}, du är {age} år gammal och din favoritfärg är {fav_color}. Dina favoritfrukter är {my_list[0]} och {my_list[1]} !")
+if int(age) <18:
+    print("Du är minderårig!")
