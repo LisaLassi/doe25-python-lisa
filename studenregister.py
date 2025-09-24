@@ -17,10 +17,11 @@ while menu_is_running:
 
         print('Studenten är tillagd! \n')
         
-    elif menu_choice == '2': #måste komma åt alla värden i dictionaryn
+    elif menu_choice == '2':
         print('Du valde att lista alla studenter: ')
         print(studenregister)
-
+        print('\n')
+        
     elif menu_choice == '3':
         print('Avslutar programmet...')
         break
