@@ -3,7 +3,7 @@ menu_is_running = True
 studenregister = []
 
 while menu_is_running:
-    menu_choice = input('Gör ett menyval \n[1] LÄGG TILL STUDENT \n[2] LISTA ALLA STUDENTER \n[3] SÖK EFTER EN STUDENT \n[4] RÄKNA GENOMSNITTLIG ÅLDER \n[5] AVSLUTA \n Ditt val:')
+    menu_choice = input('Gör ett menyval \n[1] LÄGG TILL STUDENT \n[2] LISTA ALLA STUDENTER \n[3] SÖK EFTER EN STUDENT \n[4] RÄKNA GENOMSNITTLIG ÅLDER \n[5] TA BORT STUDENT \n[6] AVSLUTA \n Ditt val:')
 
     if menu_choice == '1':
         print('Du valde att lägga till en student, ange förnamn & efternamn: ')
@@ -49,7 +49,19 @@ while menu_is_running:
             average_age = total_age / len(studenregister)
             print(f'Den genomsnittliga åldern är: {average_age} år')
         print('')
-        
+
     elif menu_choice == '5':
+        print('Du valde att ta bort en student')
+        remove_name = input('Ange förnamn på studenten du vill ta bort: ')
+        for student in studenregister:
+            if student['Förnamn'] == remove_name:
+                studenregister.remove(student)
+                print(f'Studenten {remove_name} är borttagen från registret.')
+                break
+            else:
+                print(f'Studenten {remove_name} finns inte i registret.')
+        print('')
+        
+    elif menu_choice == '6':
         print('Avslutar programmet...')
         break
