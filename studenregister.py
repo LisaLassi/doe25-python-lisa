@@ -3,9 +3,25 @@ menu_is_running = True
 studenregister = []
 
 while menu_is_running:
-    menu_choice = input('Gör ett menyval \n[1] LÄGG TILL STUDENT \n[2] LISTA ALLA STUDENTER \n[3] SÖK EFTER EN STUDENT \n[4] RÄKNA GENOMSNITTLIG ÅLDER \n[5] TA BORT STUDENT \n[6] AVSLUTA \n Ditt val:')
 
-    if menu_choice == '1':
+    print("\nGör ett menyval:")
+    print("[1] Lägg till student")
+    print("[2] Lista alla studenter")
+    print("[3] Sök efter en student")
+    print("[4] Räkna genomsnittlig ålder")
+    print("[5] Ta bort student")
+    print("[6] Avsluta")
+
+    try:
+        menu_choice = int(input("Ditt val: "))
+        if menu_choice < 1 or menu_choice > 6:
+            print("❌ Du måste skriva en siffra mellan 1-6.")
+            continue
+    except ValueError:
+        print("❌ Ogiltigt val! Du måste skriva en siffra (1-6).")
+        continue
+        
+    if menu_choice == 1:
         print('Du valde att lägga till en student, ange förnamn & efternamn: ')
         name = input('Ange förnamn: ')
         lastname = input('Ange efternamn: ')
@@ -21,13 +37,13 @@ while menu_is_running:
     
         print('Studenten är tillagd! \n')
         
-    elif menu_choice == '2':
+    elif menu_choice == 2:
         print('Du valde att lista alla studenter: ')
         for i in studenregister[::1]:
             print(f'Student: {i}')
         print('')
 
-    elif menu_choice == '3':
+    elif menu_choice == 3:
         print('Du valde att söka efter en student')
         search_name = input('Ange förnamn på studenten du söker: ')
         for student in studenregister:
@@ -38,7 +54,7 @@ while menu_is_running:
             else:
                 print(f'Studenten {search_name} finns inte i registret.')
 
-    elif menu_choice == '4':
+    elif menu_choice == 4:
         print('Du valde att räkna ut genomsnittlig ålder')
         if len(studenregister) == 0:
             print('Inga studenter i registret.')
@@ -50,7 +66,7 @@ while menu_is_running:
             print(f'Den genomsnittliga åldern är: {average_age} år')
         print('')
 
-    elif menu_choice == '5':
+    elif menu_choice == 5:
         print('Du valde att ta bort en student')
         remove_name = input('Ange förnamn på studenten du vill ta bort: ')
         for student in studenregister:
@@ -62,6 +78,6 @@ while menu_is_running:
                 print(f'Studenten {remove_name} finns inte i registret.')
         print('')
         
-    elif menu_choice == '6':
+    elif menu_choice == 6:
         print('Avslutar programmet...')
         break
