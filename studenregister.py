@@ -22,7 +22,7 @@ while menu_is_running:
         continue
         
     if menu_choice == 1:
-        print('Du valde att lägga till en student, ange förnamn & efternamn: ')
+        print('Du valde att lägga till en student: ')
         name = input('Ange förnamn: ')
         lastname = input('Ange efternamn: ')
         age = input('Ange ålder: ')
@@ -39,20 +39,34 @@ while menu_is_running:
         
     elif menu_choice == 2:
         print('Du valde att lista alla studenter: ')
-        for i in studenregister[::1]:
-            print(f'Student: {i}')
+    
+        if len(studenregister) == 0:
+          print('Det finns inga studenter i registret.')
+        
+        else:
+            for i in studenregister:
+             print(f'Namn: {i["Förnamn"]} {i["Efternamn"]}, Ålder: {i["Ålder"]} år')
         print('')
+
 
     elif menu_choice == 3:
         print('Du valde att söka efter en student')
         search_name = input('Ange förnamn på studenten du söker: ')
+
+        found = False
+        count = 0
         for student in studenregister:
             if student['Förnamn'] == search_name:
-                print(f'Studenten {search_name} finns i registret!')
-                print(f'Studentens information är:')
-                print(student)
-            else:
-                print(f'Studenten {search_name} finns inte i registret.')
+                count += 1
+                print(f'\n--- Student {count} ---')
+                print(f'Namn: {student["Förnamn"]} {student["Efternamn"]}, Ålder: {student["Ålder"]} år')
+                found = True
+            
+        if not found:
+            print(f'\nStudenten {search_name} finns inte i registret.')
+
+        else:
+            print(f'\nHittade {count} studenter med namnet {search_name}.')
 
     elif menu_choice == 4:
         print('Du valde att räkna ut genomsnittlig ålder')
