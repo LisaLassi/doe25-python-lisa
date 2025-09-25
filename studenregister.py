@@ -12,9 +12,9 @@ while menu_is_running:
         age = input('Ange ålder: ')
 
         student = {
-        'Förnamn' : {name}, 
-        'Efternamn': {lastname},
-        'Ålder': {age}
+        'Förnamn' : str(name), 
+        'Efternamn': str(lastname),
+        'Ålder': int(age)
         }
         
         studenregister.append(student)
@@ -31,13 +31,12 @@ while menu_is_running:
         print('Du valde att söka efter en student')
         search_name = input('Ange förnamn på studenten du söker: ')
         for student in studenregister:
-            if student['Förnamn'] == {search_name}:
+            if student['Förnamn'] == search_name:
                 print(f'Studenten {search_name} finns i registret!')
                 print(f'Studentens information är:')
                 print(student)
-                break
-        else:
-            print(f'Studenten {search_name} finns inte i registret.')
+            else:
+                print(f'Studenten {search_name} finns inte i registret.')
 
     elif menu_choice == '4':
         print('Du valde att räkna ut genomsnittlig ålder')
@@ -46,7 +45,7 @@ while menu_is_running:
         else:
             total_age = 0
             for student in studenregister:
-                total_age = total_age + int(student['Ålder'].pop())
+                total_age = total_age + int(student['Ålder'])
             average_age = total_age / len(studenregister)
             print(f'Den genomsnittliga åldern är: {average_age} år')
         print('')
