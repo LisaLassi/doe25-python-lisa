@@ -46,8 +46,10 @@ while menu_is_running:
         else:
             total_age = 0
             for student in studenregister:
-                
-                print('')
+                total_age = total_age + int(student['Ålder'].pop())
+            average_age = total_age / len(studenregister)
+            print(f'Den genomsnittliga åldern är: {average_age} år')
+        print('')
         
     elif menu_choice == '5':
         print('Avslutar programmet...')
