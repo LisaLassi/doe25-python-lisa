@@ -102,3 +102,4 @@ while menu_is_running:
     elif menu_choice == 6:
         print('Avslutar programmet...')
         break
+    #test
