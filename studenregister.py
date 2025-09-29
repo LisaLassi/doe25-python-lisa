@@ -15,17 +15,36 @@ while menu_is_running:
     try:
         menu_choice = int(input("Ditt val: "))
         if menu_choice < 1 or menu_choice > 6:
-            print("❌ Du måste skriva en siffra mellan 1-6.")
+            print("❌ OUPS! Du måste skriva en siffra mellan 1-6.")
             continue
     except ValueError:
-        print("❌ Ogiltigt val! Du måste skriva en siffra (1-6).")
+        print("❌ Ogiltigt val! Du måste ange en siffra (1-6).")
         continue
         
     if menu_choice == 1:
         print('\n---Du valde att lägga till en student--- ')
-        name = input('\n• Ange förnamn: ')
-        lastname = input('• Ange efternamn: ')
-        age = input('• Ange ålder: ')
+
+        while True:
+            name = input('\n• Ange förnamn: ')
+            if name.isalpha():
+                break
+            else:
+                print('❌ Ogiltigt namn! Namnet får endast innehålla bokstäver. Försök igen.\n')
+            
+        while True:
+            lastname = input('• Ange efternamn: ')
+            if lastname.isalpha():
+                break
+            else:
+                print('❌ Ogiltigt efternamn! Efternamnet får endast innehålla bokstäver. Försök igen.\n')
+
+        while True:
+            age = input('• Ange ålder: ')
+            if age.isdigit() and 0 < int(age) < 120:
+                break
+            else:
+                print('❌ Ogiltig ålder! Åldern måste vara ett tal mellan 1-119. Försök igen.\n')
+            
 
         student = {
         'Förnamn' : str(name), 
@@ -71,7 +90,7 @@ while menu_is_running:
 
         else:
             print(f'\n• Hittade {count} studenter med namnet {search_name} •')
-            input('Tryck på Enter för att återgå till menyn...')
+            input('\nTryck på Enter för att återgå till menyn...')
 
     elif menu_choice == 4:
         print('\nDu valde att räkna ut genomsnittlig ålder')
@@ -102,4 +121,3 @@ while menu_is_running:
     elif menu_choice == 6:
         print('Avslutar programmet...')
         break
-    #test
