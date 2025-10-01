@@ -2,49 +2,28 @@ menu_is_running = True
 
 studenregister = []
 
-while menu_is_running:
+from funk import print_main_menu
+from funk import get_valid_name
+from funk import get_valid_age
 
-    print("\nGör ett menyval:")
-    print("[1] Lägg till student")
-    print("[2] Lista alla studenter")
-    print("[3] Sök efter en student")
-    print("[4] Räkna genomsnittlig ålder")
-    print("[5] Ta bort student")
-    print("[6] Avsluta")
+while menu_is_running:
+    print_main_menu()
 
     try:
         menu_choice = int(input("Ditt val: "))
         if menu_choice < 1 or menu_choice > 6:
             print("❌ OUPS! Du måste skriva en siffra mellan 1-6.")
             continue
-    except ValueError:
+    except:
         print("❌ Ogiltigt val! Du måste ange en siffra (1-6).")
         continue
         
     if menu_choice == 1:
         print('\n---Du valde att lägga till en student--- ')
-
-        while True:
-            name = input('\n• Ange förnamn: ')
-            if name.isalpha():
-                break
-            else:
-                print('❌ Ogiltigt namn! Namnet får endast innehålla bokstäver. Försök igen.\n')
-            
-        while True:
-            lastname = input('• Ange efternamn: ')
-            if lastname.isalpha():
-                break
-            else:
-                print('❌ Ogiltigt efternamn! Efternamnet får endast innehålla bokstäver. Försök igen.\n')
-
-        while True:
-            age = input('• Ange ålder: ')
-            if age.isdigit() and 0 < int(age) < 120:
-                break
-            else:
-                print('❌ Ogiltig ålder! Åldern måste vara ett tal mellan 1-119. Försök igen.\n')
-            
+        
+        name = get_valid_name('\n• Ange förnamn: ')
+        lastname = get_valid_name('\n• Ange efternamn: ')
+        age = get_valid_age('\n• Ange ålder: ')
 
         student = {
         'Förnamn' : str(name), 
