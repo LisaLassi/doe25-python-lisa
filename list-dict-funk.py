@@ -34,6 +34,75 @@ Första -1 är det sista indexet i listan.
 Andra -1 är det andra stoppvärdet, vilket betyder att loopen går fram till index 0.
 Tredje -1 är stegvärdet, som gör att vi går bakåt.
 '''
-
 #DICTIONARIES
+# 1. Skapa en användarprofil: Skapa en dictionary med nycklarna namn, ålder, stad. Skriv ut dictionaryn.
+my_dict = {
+    "namn" : "Lisa",
+    "ålder" : 27,
+    "stad" : "Stockholm"
+}
+
+print(my_dict)
+
+# 2. Uppdatera profil: Låt användaren skriva in en favoritfärg och lägg till den i dictionaryn.
+my_dict["färg"] = input("Vad är din favoritfärg?: ") #Lägger till ett nytt nyckelvärde-par
+print(my_dict)
+
+# 3. Telefonbok: Skapa en dictionary där namn är nyckel och telefonnummer är värde. Låt användaren slå upp en person.
+telefonbok = {
+    "Lisa" : "12345",
+    "Ior" : "678910",
+    "Tove" : "111213",
+    "Helene" : "141516"
+}
+
+search = input("Ange förnamn på den du söker: ")
+for person in telefonbok:
+    if person == search:
+        print(f"Numret till {search} är {telefonbok[search]}")
+
+# 4. Ordfrekvens: Låt användaren skriva in en mening. Gör en dictionary där varje ord är nyckel och antalet förekomster är värdet.
+
+# 5. Inventarielista: Skapa en dictionary med varor och deras antal. Gör ett menyval:
+#○ Visa alla varor
+#○ Lägg till en vara
+#○ Ändra antal på en vara
+
+inventering = {
+    "banan" : "25",
+    "äpple" : "10",
+    "päron" : "35",
+    "apelsin" : "20",
+    "vattenmelon" : "40"
+}
+while True:
+    print("MENY")
+    print("(1) Visa alla varor")
+    print("(2) Lägg till en vara")
+    print("(3) Ändra antalet på en vara")
+    print("(4) Avsluta")
+    menyval = input("Välj: ")
+    if menyval == "1":
+        print("Här är alla varor: ")
+        print(inventering)
+
+    elif menyval == "2":
+        tillägg = input("Vad vill du lägga till?: ")
+        antal = input(f"Hur många av {tillägg} vill du lägga till: ")
+        inventering[tillägg] = antal
+
+        print(inventering)
+
+    elif menyval == "3":
+        ändring = input("Vilken vara vill du ändra antalet på?: ")
+        nytt_antal = input(f"Hur många av {ändring} ska det vara: ")
+        if ändring in inventering:
+            inventering[ändring] = nytt_antal
+            print(inventering)
+        else:
+            print("Varan hittades inte")
+
+    elif menyval == "4":
+        break
+
 # FUNKTIONER
