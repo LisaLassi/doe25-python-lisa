@@ -1,5 +1,4 @@
 # CLASSES
-
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -45,6 +44,7 @@ print(p1)
 
 print()
 #---------------------------------------------------------------------------------------------------------
+'''
 class Car:
     def __init__(self, brand, speed=0): #Får vi ingen speed så sätts värdet till 0
         self.brand = brand
@@ -93,8 +93,69 @@ print(car2)
 print(car3)
 
 print()
+'''
 #--------------------------------------------------------------------------------------------------------
 
 class Student:
     def __init__(self, name, points):
-        pass
+        self.name = name
+        self.points = points
+
+    def add_points(self, x):
+        self.points += x
+
+    def has_passed(self):
+        if self.points >=50:
+            print(f"{self.name} has passed! {self.points}/50 points.")
+            return True
+        else:
+            print(f"{self.name} has not passed, {self.points}/50 points.")
+            return False
+
+student1 = Student("Lisa", 40)
+student2 = Student("Ior", 50)
+student3 = Student("Tove", 20)
+
+student1.has_passed()
+student2.has_passed()
+student3.has_passed()
+
+print()
+
+student1.add_points(10)
+student1.has_passed()
+student2.add_points(5)
+student2.has_passed()
+student3.add_points(30)
+student3.has_passed()
+
+print("-----------------------------------------------------")
+
+#Another solution
+class Student:
+    def __init__(self, name, points):
+        self.name = name
+        self.points = points
+
+    def add_points(self, x):
+        self.points += x
+
+    def has_passed(self):
+        if self.points >=50:
+            print(f"{self.name} has passed!")
+            return True
+        else:
+            print(f"{self.name} has not passed")
+            return False
+
+student1 = Student("Lisa", 40)
+student2 = Student("Ior", 50)
+student3 = Student("Tove", 20)
+
+student1.has_passed()
+student2.has_passed()
+student3.has_passed()
+
+print()
+
+
