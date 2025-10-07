@@ -95,7 +95,7 @@ print(car3)
 print()
 '''
 #--------------------------------------------------------------------------------------------------------
-
+# My solution
 class Student:
     def __init__(self, name, points):
         self.name = name
@@ -106,11 +106,14 @@ class Student:
 
     def has_passed(self):
         if self.points >=50:
-            print(f"{self.name} has passed! {self.points}/50 points.")
+            print(f"{self.name} has passed, {self.points}/50 points.")
             return True
         else:
             print(f"{self.name} has not passed, {self.points}/50 points.")
             return False
+        
+        # return self.points >= 50 - Fungerar också, gör samma sak som ovan. 
+        # Man vill gärna undvika print satser i klasser
 
 student1 = Student("Lisa", 40)
 student2 = Student("Ior", 50)
@@ -128,34 +131,25 @@ student2.add_points(5)
 student2.has_passed()
 student3.add_points(30)
 student3.has_passed()
-
+print()
 print("-----------------------------------------------------")
 
-#Another solution
-class Student:
-    def __init__(self, name, points):
-        self.name = name
-        self.points = points
+#CJ's solution --> Se github repo
 
-    def add_points(self, x):
-        self.points += x
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance 
 
-    def has_passed(self):
-        if self.points >=50:
-            print(f"{self.name} has passed!")
-            return True
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print("")
         else:
-            print(f"{self.name} has not passed")
-            return False
-
-student1 = Student("Lisa", 40)
-student2 = Student("Ior", 50)
-student3 = Student("Tove", 20)
-
-student1.has_passed()
-student2.has_passed()
-student3.has_passed()
+            self.balance -= amount
 
 print()
-
+print("---------------------------------------------------------------------------------------------")
 
