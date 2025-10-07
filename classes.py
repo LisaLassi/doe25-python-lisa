@@ -1,4 +1,5 @@
 # CLASSES
+'''
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -30,9 +31,11 @@ p3.greet("Erik")
 p4.greet()
 
 '''
+'''
 new_name = input(f"Set new name for {p1.name}: ")
 p1.name = new_name
 print("New name is", p1.name)
+'''
 '''
 #Better approach:
 new_name = input(f"Set new name for {p1.get_name()}: ")
@@ -43,6 +46,7 @@ print("New name is", p1.get_name())
 print(p1)
 
 print()
+'''
 #---------------------------------------------------------------------------------------------------------
 '''
 class Car:
@@ -96,6 +100,7 @@ print()
 '''
 #--------------------------------------------------------------------------------------------------------
 # My solution
+'''
 class Student:
     def __init__(self, name, points):
         self.name = name
@@ -135,9 +140,9 @@ print()
 print("-----------------------------------------------------")
 
 #CJ's solution --> Se github repo
-
+'''
 class BankAccount:
-    def __init__(self, owner, balance):
+    def __init__(self, owner, balance=0):
         self.owner = owner
         self.balance = balance 
 
@@ -146,9 +151,28 @@ class BankAccount:
 
     def withdraw(self, amount):
         if amount > self.balance:
-            print("")
+            print("Otillräckligt saldo")
         else:
             self.balance -= amount
+
+    def show_balance(self):
+        print(f"{self.owner}'s saldo är: {self.balance}")
+
+a1 = BankAccount("Lisa", 500)
+a2 = BankAccount("Ior", 300)
+
+a1.show_balance()
+a2.show_balance()
+
+a1.deposit(500)
+a1.show_balance()
+a2.deposit(200)
+a2.show_balance()
+
+a1.withdraw(700)
+a1.show_balance()
+a2.withdraw(100)
+a2.show_balance()
 
 print()
 print("---------------------------------------------------------------------------------------------")
