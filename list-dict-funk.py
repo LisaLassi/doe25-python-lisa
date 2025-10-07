@@ -1,4 +1,5 @@
 # LISTOR
+'''
 # 1.Summera tal: Skapa en lista med heltal. Använd en for-loop för att summera alla tal och skriv ut summan.
 heltal_lista = [5, 10, 15, 20, 25, 30]
 sum = 0 # Initiera en variabel för att lagra summan
@@ -29,13 +30,13 @@ print("\n")
 ny_lista = [1, 2, 3, 4, 5]
 for i in range(len(ny_lista) -1, -1, -1):
     print(ny_lista[i])
-    
+'''    
 '''
 Första -1 är det sista indexet i listan.
 Andra -1 är det andra stoppvärdet, vilket betyder att loopen går fram till index 0.
 Tredje -1 är stegvärdet, som gör att vi går bakåt.
 '''
-
+'''
 #DICTIONARIES
 # 1. Skapa en användarprofil: Skapa en dictionary med nycklarna namn, ålder, stad. Skriv ut dictionaryn.
 my_dict = {
@@ -106,7 +107,7 @@ while True:
 
     elif menyval == "4":
         break
-
+'''
 # FUNKTIONER
 # 1. Kvadrat: Skriv en funktion square(x) som returnerar kvadraten av ett tal.
 def square(x):
@@ -123,7 +124,7 @@ def maximmum(a, b):
 tal1 = int(input("Ange tal 1: "))
 tal2 = int(input("Ange tal 2: "))
 
-resultat2 = max(tal1, tal2)
+resultat2 = maximmum(tal1, tal2)
 print(f"Det största talet är: {resultat2}!")
 
 # 3. Medelvärde: Skriv en funktion average(numbers) som tar en lista med tal och returnerar medelvärdet.
