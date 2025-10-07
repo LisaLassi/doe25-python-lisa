@@ -29,11 +29,13 @@ print("\n")
 ny_lista = [1, 2, 3, 4, 5]
 for i in range(len(ny_lista) -1, -1, -1):
     print(ny_lista[i])
+    
 '''
 Första -1 är det sista indexet i listan.
 Andra -1 är det andra stoppvärdet, vilket betyder att loopen går fram till index 0.
 Tredje -1 är stegvärdet, som gör att vi går bakåt.
 '''
+
 #DICTIONARIES
 # 1. Skapa en användarprofil: Skapa en dictionary med nycklarna namn, ålder, stad. Skriv ut dictionaryn.
 my_dict = {
@@ -106,3 +108,37 @@ while True:
         break
 
 # FUNKTIONER
+# 1. Kvadrat: Skriv en funktion square(x) som returnerar kvadraten av ett tal.
+def square(x):
+    return x ** x
+
+tal = int(input("Ange ett tal: "))
+resultat = square(tal)
+print(resultat)
+
+# 2. Max av två: Skriv en funktion maximum(a, b) som returnerar det största av två tal.
+def maximmum(a, b):
+    return max(a, b)
+
+tal1 = int(input("Ange tal 1: "))
+tal2 = int(input("Ange tal 2: "))
+
+resultat2 = max(tal1, tal2)
+print(f"Det största talet är: {resultat2}!")
+
+# 3. Medelvärde: Skriv en funktion average(numbers) som tar en lista med tal och returnerar medelvärdet.
+def average(numbers):
+    return sum(numbers) / len(numbers)
+
+min_lista = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+print("Medelvärdet av listan är ", average(min_lista))
+
+# 4. Palindromtest: Skriv en funktion som returnerar True om ordet är samma fram- och baklänges.
+
+# 5. Multiplikationstabell som funktion: Skriv en funktion multiplikation_table(n) som skriver ut multiplikationstabellen för ett tal.
+def multiplikation_table(n):
+    for i in range(1,11):
+        print(f"{n} x {i} = {n * i}")
+
+talet = int(input("Ange ett tal: "))
+multiplikation_table(talet)
